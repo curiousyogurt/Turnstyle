@@ -137,10 +137,6 @@ Returns:
     YES if the formula is atomic; NO otherwise [atomic]
     YES if the formula permits free variable; NO otherwise [freeVariables]
 
-Parameters:
-
-    none
-
 ***
 
 ### `-(NSCharacterSet *)constantSet`
