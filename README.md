@@ -115,7 +115,7 @@ Example:
 ### `-(NSString *)centreBranch`
 ### `-(NSString *)rightBranch`
 ### `-(NSString *)unswappedLeftBranch`
-###`-(NSString *)unswappedRightBranch`
+### `-(NSString *)unswappedRightBranch`
 Parameters:
 
     none
@@ -128,4 +128,64 @@ Returns:
     The main subformula on the left of the main connective with identity predicates in the infix position [unswappedLeftBranch]
     The main subformula on the right of the main connective with identity predicates in the infix position [unswappedRightBranch]
 
+### `-(BOOL)wff`
+### `-(BOOL)atomic`
+### `-(BOOL)freeVariables`
 
+Parameters:
+
+    none
+
+Returns:
+
+    YES if the formula is well-formed; NO otherwise [wff]
+    YES if the formula is atomic; NO otherwise [atomic]
+    YES if the formula permits free variable; NO otherwise [freeVariables]
+
+Parameters:
+
+    none
+
+Returns:
+
+
+### `-(NSCharacterSet *)constantSet`
+### `-(NSCharacterSet *)variableSet`
+
+Parameters:
+
+    none
+
+Returns:
+
+    The set of characters corresponding to constants [constantSet]
+    The set of characters corresponding to variables [variableSet]
+
+
+### `-(BOOL)isCharacterBound:(NSString *)theCharacter`
+
+Parameters:
+
+    A string representing the charcater in question.
+
+Returns:
+
+    YES if theCharacter is bound; NO otherwise
+
+### `-(NSArray *)parseTree`
+
+Parameters:
+
+    none
+
+Returns:
+
+    An array of the next set of branches for the syntactic tree.
+
+Example:
+
+    [f setFormula:@"(A&(~B&C))"];
+    [f parseTree];
+    * * *
+    A
+    (~B&C)
