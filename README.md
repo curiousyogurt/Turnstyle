@@ -18,13 +18,9 @@ Example:
 
     Formula *f = [[Formula alloc] initWithFormula:@"A&B"];
 
-### `-(void)setFormula`
-
-Variations:
-
-    -(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet withFreeVariables:(BOOL)allowsFreeVariables
-    -(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet
-    -(void)setFormula:(NSString *)aFormula
+###`-(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet withFreeVariables:(BOOL)allowsFreeVariables`
+###`-(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet`
+###`-(void)setFormula:(NSString *)aFormula`
 
 Parameters: 
 
@@ -61,7 +57,7 @@ Parameters:
 
     none
 
-Return:
+Returns:
 
     The formula as a string, with identity predicates in the infix position.
 
@@ -114,7 +110,8 @@ Example:
 ### `-(NSString *)leftBranch`
 ### `-(NSString *)centreBranch`
 ### `-(NSString *)rightBranch`
-
+### `-(NSString *)unswappedLeftBranch`
+###`-(NSString *)unswappedRightBranch`
 Parameters:
 
     none
@@ -124,4 +121,7 @@ Returns:
     The main subformula on the left of the main connective [leftBranch]
     The main subformula on the right of the main connective [rightBranch]
     The main connective [centreBranch]
+    The main subformula on the left of the main connective with identity predicates in the infix position [unswappedLeftBranch]
+    The main subformula on the right of the main connective with identity predicates in the infix position [unswappedRightBranch]
+
 
