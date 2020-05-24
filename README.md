@@ -4,7 +4,7 @@
 
 ## Class: Formula
 
-###`-(id)initWithFormula:(NSString *)aFormula`
+### `-(id)initWithFormula:(NSString *)aFormula`
 
 Parameters:
 
@@ -18,7 +18,7 @@ Example:
 
     Formula *f = [[Formula alloc] initWithFormula:@"A&B"];
 
-###`-(void)setFormula`
+### `-(void)setFormula`
 
 Variations:
 
@@ -41,7 +41,7 @@ Example:
 
     [f setFormula:@"A&B" withConstantSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrs"] andVariableSet:[NSCharacterSet characterSetWithCharactersInString:@"tuvwxyz"] withFreeVariables:NO];
 
-###`-(NSString *)formula`
+### `-(NSString *)formula`
 
 Parameters:
 
@@ -55,7 +55,7 @@ Example:
 
     [f formula];
 
-###`-(NSString *)unswappedFormula`
+### `-(NSString *)unswappedFormula`
 
 Parameters:
 
@@ -69,7 +69,7 @@ Example:
 
     [f unswappedFormula];
 
-###`-(NSArray *)subformulaeOf:(NSUInteger)aCharacterPosition`
+### `-(NSArray *)subformulaeOf:(NSUInteger)aCharacterPosition`
 
 Parameters:
 
@@ -83,7 +83,7 @@ Example:
 
     [f subformulaeOf:5];
 
-###`-(NSUInteger)formulaLength`
+### `-(NSUInteger)formulaLength`
 
 Parameters:
 
@@ -97,7 +97,7 @@ Example:
 
     [f formulaLength];
 
-###`-(NSUInteger)mainConnective`
+### `-(NSUInteger)mainConnective`
 
 Parameters:
 
@@ -111,9 +111,9 @@ Example:
 
     [f mainConnective];
     
-###`-(NSString *)leftBranch`
-###`-(NSString *)centreBranch`
-###`-(NSString *)rightBranch`
+### `-(NSString *)leftBranch`
+### `-(NSString *)centreBranch`
+### `-(NSString *)rightBranch`
 
 Parameters:
 
