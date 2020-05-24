@@ -186,6 +186,6 @@ Example:
 
     [f setFormula:@"(A&(~B&C))"];
     [f parseTree];
-    ***
+***
     A
     (~B&C)
