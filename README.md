@@ -17,7 +17,7 @@ Return:
 Example:
 
     Formula *f = [[Formula alloc] initWithFormula:@"A&B"];
-
+***
 ### `-(void)setFormula`
 
 Variations:
@@ -41,7 +41,10 @@ Example:
 
     [f setFormula:@"A&B" withConstantSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrs"] andVariableSet:[NSCharacterSet characterSetWithCharactersInString:@"tuvwxyz"] withFreeVariables:NO];
 
+***
+
 ### `-(NSString *)formula`
+### `-(NSString *)unswappedFormula`
 
 Parameters:
 
@@ -49,39 +52,33 @@ Parameters:
 
 Return:
 
-    The formula as a string, with identity predicates in the prefix position.
+    The formula as a string, with identity predicates in the prefix position [formula]
+    The formula as a string, with identity predicates in the infix position [unswappedFormula]
 
 Example:
 
-    [f formula];
+    [f setFormula:@"(A&(B&c=d))"];
+    [f formula];                 => (A&(B&c=d))
+    [f unswappedFormula];        => (A&(B&=cd))
 
-### `-(NSString *)unswappedFormula`
-
-Parameters:
-
-    none
-
-Returns:
-
-    The formula as a string, with identity predicates in the infix position.
-
-Example:
-
-    [f unswappedFormula];
+***
 
 ### `-(NSArray *)subformulaeOf:(NSUInteger)aCharacterPosition`
 
 Parameters:
 
-    aCharacterPosition: the position of a character in the formula
+    aCharacterPosition: the position of a character in the formula (counting from 0 as the first position)
 
 Returns:
 
-    An array of all the subformulae where the character at aCharacterposition first appears in the semantic tree.
+    An array for all the subformulae where the character at aCharacterposition first appears in the semantic tree.
 
 Example:
 
-    [f subformulaeOf:5];
+    [f setFormula:@"(A&(B&c=d))"];
+    [f subformulaeOf:4];           => {(A&(B&=cd)), (B&=cd)}
+
+***
 
 ### `-(NSUInteger)formulaLength`
 
@@ -93,9 +90,7 @@ Returns:
 
     An integer representing the length of the formula.
 
-Example:
-
-    [f formulaLength];
+***
 
 ### `-(NSUInteger)mainConnective`
 
@@ -107,10 +102,8 @@ Returns:
 
     An integer representing the position of the main connective.
 
-Example:
-
-    [f mainConnective];
-    
+***
+   
 ### `-(NSString *)leftBranch`
 ### `-(NSString *)centreBranch`
 ### `-(NSString *)rightBranch`
@@ -127,6 +120,8 @@ Returns:
     The main connective [centreBranch]
     The main subformula on the left of the main connective with identity predicates in the infix position [unswappedLeftBranch]
     The main subformula on the right of the main connective with identity predicates in the infix position [unswappedRightBranch]
+
+***
 
 ### `-(BOOL)wff`
 ### `-(BOOL)atomic`
@@ -146,8 +141,7 @@ Parameters:
 
     none
 
-Returns:
-
+***
 
 ### `-(NSCharacterSet *)constantSet`
 ### `-(NSCharacterSet *)variableSet`
@@ -161,6 +155,7 @@ Returns:
     The set of characters corresponding to constants [constantSet]
     The set of characters corresponding to variables [variableSet]
 
+***
 
 ### `-(BOOL)isCharacterBound:(NSString *)theCharacter`
 
@@ -171,6 +166,8 @@ Parameters:
 Returns:
 
     YES if theCharacter is bound; NO otherwise
+
+***
 
 ### `-(NSArray *)parseTree`
 
@@ -185,7 +182,4 @@ Returns:
 Example:
 
     [f setFormula:@"(A&(~B&C))"];
-    [f parseTree];
-***
-    A
-    (~B&C)
+    [f parseTree];                => {A, (~B&C)}
