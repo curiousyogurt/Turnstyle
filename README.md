@@ -18,9 +18,9 @@ Example:
 
     Formula *f = [[Formula alloc] initWithFormula:@"A&B"];
 
-###`-(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet withFreeVariables:(BOOL)allowsFreeVariables`
-###`-(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet`
-###`-(void)setFormula:(NSString *)aFormula`
+### `-(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet withFreeVariables:(BOOL)allowsFreeVariables`
+### `-(void)setFormula:(NSString *)aFormula withConstantSet:(NSCharacterSet *)aConstantSet andVariableSet:(NSCharacterSet *)aVariableSet`
+### `-(void)setFormula:(NSString *)aFormula`
 
 Parameters: 
 
