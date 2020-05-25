@@ -58,8 +58,8 @@ Return:
 Example:
 
     [f setFormula:@"(A&(B&c=d))"];
-    [f formula];                 => (A&(B&c=d))
-    [f unswappedFormula];        => (A&(B&=cd))
+    [f formula];                   => (A&(B&c=d))
+    [f unswappedFormula];          => (A&(B&=cd))
 
 ***
 
@@ -81,17 +81,6 @@ Example:
 ***
 
 ### `-(NSUInteger)formulaLength`
-
-Parameters:
-
-    none
-
-Returns:
-
-    An integer representing the length of the formula.
-
-***
-
 ### `-(NSUInteger)mainConnective`
 
 Parameters:
@@ -100,7 +89,8 @@ Parameters:
 
 Returns:
 
-    An integer representing the position of the main connective.
+    An unsigned integer representing the length of the formula [formulaLength]
+    An integer representing the position of the main connective of the formula [mainConnective]
 
 ***
    
