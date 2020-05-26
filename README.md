@@ -6,7 +6,7 @@ The `Formula` class governs the syntax and parsing for single formulae.  The syn
 
 By default: (i) all capital letters and ⋏ are sentence letters, (ii) small letters a through s are constants, (iii) small letters t through z are variables, and (iv) free variables are not permitted.  Defaults concerning constant and variable ranges, together with free variables, may be set through `setFormula`.
 
-For most straightforward purposes, you will want to create a new `Formula` object, and use `setFormula`.  The formula will be parsed, and then the informational methods, such as `wff`, `atomic`, `parseTree`, and `*connective`, become available.
+For many purposes, you will want to create a new `Formula` object, and use `setFormula`.  The formula will be parsed, and then the informational methods, such as `wff`, `atomic`, `parseTree`, and `*connective`, become available.
 
 ## Class: Formula
 
