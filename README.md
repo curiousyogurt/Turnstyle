@@ -2,6 +2,12 @@
 
 *Turnstyle* is the logic engine for *Deductions*, which is a proof assistant for natural deduction problems in first-order logic with identity.  Formula.m is the code that allows *Turnstyle* to parse single formulae in first-order logic.  It is heavily commented, and is very fast.
 
+The Formula class governs the syntax and parsing for single formulae.  The syntax rules are taken from Graeme Forbes' _Modern Logic: A Text in Elementary Symbolic Logic_ (Oxford, 1994).  Parentheses are used for operators that have two terms; for example, "(A & B)", not "A & B".  Furthermore, parentheses are used around quantifiers; for example, "(∀x)Fx", not "∀xFx".  Main connectives are ~, &, →, ↔, ∨, ∀, ∃.  ⋏ (the contradiction symbol) is treated as a sentence letter.  = and ≠ are treated as predicates (prefix in the "swapped" state, e.g., "=ab"; infix in the "unswapped" state, e.g., "a=b").  Parentheses are the only permissible punctuation.
+
+By default: (i) all capital letters and ⋏ are sentence letters, (ii) small letters a through s are constants, (iii) small letters t through z are variables, and (iv) free variables are not permitted.  Defaults concerning constant and variable ranges, together with free variables, may be set through `setFormula`.
+
+Basic useage for the class is to initialise the object and set the formula.  Whether the formula is a well-formed, atomic, what its main connective is, what its main subformulae are calculated automatically.  Furthermore, we may use `leftBranch`, `centreBranch`, and `rightBranch` to determine the subformulae of the main connective, and `subformulaeOf` to list all the subformulae of a given symbol.
+
 ## Class: Formula
 
 ### `-(id)initWithFormula:(NSString *)aFormula`
